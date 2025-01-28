@@ -2455,3 +2455,76 @@ blockquote {
     border-left: 5px solid #dc3545; /* Red for past events */
 }
 
+#life-in-milan .button {
+    margin: 10px 0;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 25px;
+    background: #f04d4e;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#life-in-milan .button:hover {
+    background: #d93d3e;
+}
+
+#life-in-milan .button-description {
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+}
+
+    /* Subsection Styling */
+    #university-networks {
+        margin-top: 40px;
+        padding: 30px;
+        background: #f9f9f9; /* Light, clean background */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    #university-networks .section-heading h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    #university-networks .section-heading h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    #university-networks .section-subtitle {
+        font-size: 16px;
+        color: #888;
+        margin-bottom: 20px;
+    }
+
+    .network-links {
+        display: flex;
+        justify-content: center;
+        gap: 50px; /* Adds spacing between links */
+    }
+
+    .network-link {
+        font-size: 22px; /* Matches h2 size for emphasis */
+        font-weight: 600;
+        color: #007bff; /* Primary website color */
+        text-decoration: none;
+        padding: 10px 20px;
+        background: #fff; /* Clean button look */
+        border: 2px solid #007bff;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .network-link:hover {
+        background: #007bff;
+        color: #fff;
+        transform: scale(1.05); /* Slight hover zoom */
+    }
