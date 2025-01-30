@@ -2528,3 +2528,23 @@ blockquote {
         color: #fff;
         transform: scale(1.05); /* Slight hover zoom */
     }
+
+
+    #banner-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #banner-content .col-38 {
+        width: 100%;
+    }
+    
+    #banner-content .section-heading {
+        text-align: center;
+    }
+    
