@@ -37,9 +37,9 @@ a:hover, #header.nav-solid nav a:hover {
 
 /* Border Color */
 
-#banner .section-heading:before, .testimonial.classic footer:before {
+/* #banner .section-heading:before, .testimonial.classic footer:before {
     background: #fca111;
-}
+} */
 
 .pricing-block-content:hover {
     border-color:#fca111;
@@ -178,7 +178,7 @@ body {
 
 #banner h2 {
     font-family: 'Open Sans', sans-serif, Arial, Helvetica;
-    font-size:18px;
+    font-size:25px;
     font-weight:300;
     color:#111;
 }
@@ -195,7 +195,7 @@ body {
 
 .section-subtitle {
     font-family: 'Open Sans', sans-serif, Arial, Helvetica;
-    font-size: 16px;
+    font-size: 25px;
     font-weight:300;
     color:#000000;
 }

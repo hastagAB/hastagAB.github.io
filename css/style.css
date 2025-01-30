@@ -189,7 +189,7 @@ section {
 .row {
     max-width: 1245px;
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 80px 0;
     position: relative;
 }
 
@@ -767,7 +767,7 @@ h6 {
 }
 
 .section-heading h3 {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
     color: #ccc;
     letter-spacing: 2px;
@@ -2487,20 +2487,20 @@ blockquote {
     }
 
     #university-networks .section-heading h3 {
-        font-size: 20px;
+        font-size: 34px;
         font-weight: 600;
         color: #666;
         margin-bottom: 10px;
     }
 
     #university-networks .section-heading h2 {
-        font-size: 28px;
+        font-size: 20px;
         font-weight: 700;
         margin-bottom: 15px;
     }
 
     #university-networks .section-subtitle {
-        font-size: 16px;
+        font-size: 25px;
         color: #888;
         margin-bottom: 20px;
     }
@@ -2583,7 +2583,7 @@ blockquote {
     
     .role-icon {
         font-size: 40px;
-        color: #d4af37;
+        color: #fca111;
         margin-bottom: 15px;
     }
     /* General Section Styling */
@@ -2630,7 +2630,7 @@ blockquote {
 
 /* Center Card - Gold Background with Black Text */
 .gold-card {
-    background: #d4af37;
+    background: #fca111;
     color: #000;
 }
 
@@ -2671,14 +2671,14 @@ blockquote {
 
 /* Gold Button for Black Cards */
 .gold-button {
-    background: #d4af37;
+    background: #fca111;
     color: #000;
-    border-color: #d4af37; /* Default border color */
+    border-color: #fca111; /* Default border color */
 }
 
 .gold-button:hover {
     background: #000 !important;
-    color: #d4af37 !important;
+    color: #fca111 !important;
     border-color: #000 !important; /* Ensures border also turns black */
 }
 
@@ -2690,8 +2690,8 @@ blockquote {
 }
 
 .black-button:hover {
-    background: #d4af37 !important;
+    background: #fca111 !important;
     color: #000 !important;
-    border-color: #d4af37 !important; /* Ensures border also turns golden */
+    border-color: #fca111 !important; /* Ensures border also turns golden */
 }
     
