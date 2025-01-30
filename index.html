@@ -76,34 +76,25 @@
                     <aside>
 
                         <!--Social Icons in Header-->
-                        <ul class="social-icons">
-                            <li>
-                                <a target="_blank" title="Facebook" href="https://www.facebook.com/username">
-                                    <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" title="Google+" href="http://google.com/+username">
-                                    <i class="fa fa-google-plus fa-1x"></i><span>Google+</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" title="Twitter" href="http://www.twitter.com/username">
-                                    <i class="fa fa-twitter fa-1x"></i><span>Twitter</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" title="Instagram" href="http://www.instagram.com/sassi.milan">
-                                    <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" title="behance" href="http://www.behance.net">
-                                    <i class="fa fa-behance fa-1x"></i><span>Behance</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!--End of Social Icons in Header-->
+                <ul class="social-icons">
+                    <li>
+                        <a target="_blank" title="Gmail" href="mailto:your-email@gmail.com">
+                            <i class="fa fa-envelope fa-1x"></i><span>Gmail</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" title="Twitter" href="http://www.twitter.com/username">
+                            <i class="fa fa-twitter fa-1x"></i><span>Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" title="Instagram" href="http://www.instagram.com/sassi.milan">
+                            <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
+                        </a>
+                    </li>
+                </ul>
+                <!--End of Social Icons in Header-->
+
 
                     </aside>
 
@@ -182,18 +173,24 @@
         </div><!--End of Header-->
 
         <!--Banner Content-->
-        <div id="banner-content" class="row clearfix">
-            <div class="col-38">
-                <div class="section-heading">
-                    <h1 id="title">Students' Association of Indians</h1>
-                    <h2 id="subtitle1">A community by the students, for the students.</h2>
-                    <h2 id="subtitle2">Bringing Indian students in Italy together, celebrating our culture, supporting each other, and making every step of this journey feel like home</h2>
-                </div>
-                <!-- Call to Action -->
-                <a href="https://www.instagram.com/sassi.milan/" class="button">OUR INSTAGRAM!</a>
-                <!-- End Call to Action -->
-            </div>
+        <!-- Banner Content -->
+<div id="banner-content" class="row clearfix">
+    <div class="col-38">
+        <div class="section-heading">
+            <h1 id="title">Students' Association of Indians</h1>
+            <h2 id="subtitle1">A community by the students, for the students.</h2>
+            <h2 id="subtitle2">Bringing Indian students in Italy together, celebrating our culture, supporting each other, and making every step of this journey feel like home</h2>
         </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="banner-buttons">
+            <a href="https://www.instagram.com/sassi.milan/" class="button">OUR INSTAGRAM!</a>
+            <a href="https://example.com/join-us" class="button join-button">JOIN US</a>
+        </div>
+        <!-- End Call to Action Buttons -->
+    </div>
+</div>
+
     
         <script>
             document.addEventListener("DOMContentLoaded", function () {
@@ -316,7 +313,7 @@
         bottom: 0;
         left: 0;
         width: 100vw; /* Ensures it spans the entire screen width */
-        height: 310px; /* Adjust height as needed */
+        height: 350px; /* Adjust height as needed */
         background: url("images/milan.png") no-repeat center bottom;
         background-size: cover; /* Ensures full-width coverage */
         opacity: 0.9;
@@ -364,11 +361,24 @@
                     </p>
                 </div>
 
+                <!-- ISA UniMi -->
+                <div style="text-align: center; max-width: 250px;">
+                    <a href="https://www.instagram.com/isa.unimi/" target="_blank" class="network-link button" 
+                       style="padding: 12px 25px; font-size: 18px; display: inline-block;">
+                        ISA UniMi
+                    </a>
+                    <p style="margin-top: 5px; font-size: 16px; color: #444; line-height: 1.4;">
+                        <strong>Indian Students Association</strong><br>
+                        University of Milan
+                    </p>
+                </div>
+
             </div>
         </div>
     </div>
 </section>
 <!-- End Subsection -->
+
 
 
 <!-- Events Section -->
@@ -616,7 +626,7 @@ data-featherlight-filter="a">
     <footer id="landing-footer" class="clearfix">
         <div class="row clearfix">
 
-            <p id="copyright" class="col-2">Made with love by <a href="https://www.shapingrain.com">HastagAB</a></p>
+            <p id="copyright" class="col-2">Made with love by <a href="https://github.com/hastagAB">HastagAB</a></p>
 
             <!--Social Icons in Footer-->
             <ul class="col-2 social-icons">

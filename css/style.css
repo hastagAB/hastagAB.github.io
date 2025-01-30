@@ -2695,3 +2695,20 @@ blockquote {
     border-color: #fca111 !important; /* Ensures border also turns golden */
 }
     
+
+.banner-buttons {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    margin-top: 15px;
+}
+
+.join-button {
+    background-color: #d4af37; /* Golden color */
+    color: black;
+    font-weight: bold;
+}
+
+.join-button:hover {
+    background-color: black;
+    color: #d4af37;
+}
