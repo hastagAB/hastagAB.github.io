@@ -2548,3 +2548,150 @@ blockquote {
         text-align: center;
     }
     
+
+    #join-sassi {
+        background-color: #f7f7f7;
+        padding: 60px 0;
+    }
+    
+    .team-roles {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+    
+    .role-card {
+        background: white;
+        padding: 25px;
+        width: 280px;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        position: relative;
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Keep default text color */
+    }
+    
+    .role-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+    }
+    
+    .role-icon {
+        font-size: 40px;
+        color: #d4af37;
+        margin-bottom: 15px;
+    }
+    /* General Section Styling */
+#pricing {
+    padding: 60px 0;
+    background-color: #f7f7f7;
+}
+
+/* Container for Cards */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Pricing Block - Equal Heights */
+.pricing-block {
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+    height: 400px; /* Ensures equal height */
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Left & Right Cards - Black Background with White Text */
+.black-card {
+    background: #000;
+    color: #fff;
+}
+
+/* Fix for Text in Black Cards */
+.black-card h3, .black-card .price, .black-card p {
+    color: #fff !important;
+}
+
+/* Center Card - Gold Background with Black Text */
+.gold-card {
+    background: #d4af37;
+    color: #000;
+}
+
+/* Card Hover Animation */
+.pricing-block:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Pricing Amount */
+.price {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Button Container (Ensures Buttons Stay at the Bottom) */
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: auto; /* Push to bottom */
+    padding-bottom: 15px; /* Ensures alignment */
+}
+
+/* Buttons */
+.button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    transition: 0.3s ease;
+    border: 2px solid transparent; /* Default border */
+}
+
+/* Gold Button for Black Cards */
+.gold-button {
+    background: #d4af37;
+    color: #000;
+    border-color: #d4af37; /* Default border color */
+}
+
+.gold-button:hover {
+    background: #000 !important;
+    color: #d4af37 !important;
+    border-color: #000 !important; /* Ensures border also turns black */
+}
+
+/* Black Button for Gold Card */
+.black-button {
+    background: #000;
+    color: #fff;
+    border-color: #000; /* Default border color */
+}
+
+.black-button:hover {
+    background: #d4af37 !important;
+    color: #000 !important;
+    border-color: #d4af37 !important; /* Ensures border also turns golden */
+}
+    
