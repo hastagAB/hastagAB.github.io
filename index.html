@@ -384,34 +384,37 @@
 <!-- Events Section -->
 <section id="events" class="scrollto clearfix" style="background-color: #ffffff; padding: 60px 0;">
     <div class="row clearfix" style="display: flex; align-items: center; justify-content: space-between;">
-
         <!-- Left: Image -->
         <div class="col-2 event-image" style="flex: 1; text-align: center;">
-            <img src="images/banner-images/SASSI-FULL.png" alt="SASSI Events" style="max-width: 100%; border-radius: 10px;">
+            <img src="images/events.png" alt="SASSI Events" onclick="show()" style="max-width: 100%; border-radius: 10px;">
         </div>
 
         <!-- Right: Event Details -->
         <div class="col-2 event-details" style="flex: 1; padding: 0 40px;">
             <h2 style="font-size: 36px; font-weight: bold; margin-bottom: 10px;">OUR EVENTS</h2>
             <p style="font-size: 20px; color: #333; line-height: 1.6; text-align: justify;">
-                SASSI organizes a diverse range of events throughout the year, 
-                from academic workshops and career guidance sessions to cultural celebrations 
+                SASSI organizes a diverse range of events throughout the year,
+                from academic workshops and career guidance sessions to cultural celebrations
                 and networking meetups, ensuring a vibrant student experience in Italy.
             </p>
             <p style="font-size: 20px; color: #333; line-height: 1.6; text-align: justify;">
-                Our past events have included networking sessions with the Consulate General of India in Milan, 
-                cultural festivals like Diwali and Holi, mentorship programs for new students, and collaborations 
+                Our past events have included networking sessions with the Consulate General of India in Milan,
+                cultural festivals like Diwali and Holi, mentorship programs for new students, and collaborations
                 with university associations and industry leaders to provide valuable insights and opportunities.
             </p>
-
             <!-- Learn More Button -->
             <a href="#" class="button" style="margin-top: 15px; padding: 15px 30px; font-size: 18px; background-color: #444; color: white; text-transform: uppercase; display: inline-block;">
                 Learn More
             </a>
         </div>
-
     </div>
 </section>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
 
 
 
@@ -451,42 +454,42 @@ data-featherlight-filter="a">
         <!-- Interactive Role Cards -->
         <div class="team-roles">
             <!-- Content Creator -->
-            <a href="https://example.com/join-content" class="role-card wow fadeInUp" data-wow-delay="0.2s">
+            <a href="https://example.com/join-content" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.2s">
                 <div class="role-icon"><i class="fa fa-pencil"></i></div>
                 <h4>Content Creator</h4>
                 <p>Write engaging blogs, articles, and newsletters to keep our community informed.</p>
             </a>
 
             <!-- Social Media Designers -->
-            <a href="https://example.com/join-social" class="role-card wow fadeInUp" data-wow-delay="0.3s">
+            <a href="https://example.com/join-social" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.3s">
                 <div class="role-icon"><i class="fa fa-paint-brush"></i></div>
                 <h4>Social Media Designer</h4>
                 <p>Create eye-catching visuals for Instagram, LinkedIn, and promotional materials.</p>
             </a>
 
             <!-- Event Managers -->
-            <a href="https://example.com/join-event" class="role-card wow fadeInUp" data-wow-delay="0.4s">
+            <a href="https://example.com/join-event" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.4s">
                 <div class="role-icon"><i class="fa fa-calendar"></i></div>
                 <h4>Event Manager</h4>
                 <p>Plan and organize cultural, academic, and networking events for the community.</p>
             </a>
 
             <!-- Student Support -->
-            <a href="https://example.com/join-support" class="role-card wow fadeInUp" data-wow-delay="0.5s">
+            <a href="https://example.com/join-support" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.5s">
                 <div class="role-icon"><i class="fa fa-users"></i></div>
                 <h4>Student Support</h4>
                 <p>Help incoming and current students with guidance, housing, and university life.</p>
             </a>
 
             <!-- Tech Team -->
-            <a href="https://example.com/join-tech" class="role-card wow fadeInUp" data-wow-delay="0.6s">
+            <a href="https://example.com/join-tech" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.6s">
                 <div class="role-icon"><i class="fa fa-code"></i></div>
                 <h4>Tech Team</h4>
                 <p>Manage and develop the website, automation, and digital platforms of SASSI.</p>
             </a>
 
             <!-- Communication Team -->
-            <a href="https://example.com/join-communication" class="role-card wow fadeInUp" data-wow-delay="0.7s">
+            <a href="https://example.com/join-communication" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.7s">
                 <div class="role-icon"><i class="fa fa-comments"></i></div>
                 <h4>Communication Team</h4>
                 <p>Engage with students, partners, and stakeholders to build a strong community.</p>
