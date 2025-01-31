@@ -65,28 +65,3 @@ $(window).load(function () { // makes sure the whole site is loaded
 	}
 
 });
-
-
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.querySelector(".event-image img");
-var modalImg = document.getElementById("img01");
-
-function show() {
-    modal.style.display = "block";
-    modalImg.src = img.src;
-}
-
-// Close the modal when the user clicks on the close button
-function closeModal() {
-    modal.style.display = "none";
-}
-
-// Close the modal when the user clicks anywhere outside of the modal
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}

@@ -103,15 +103,8 @@
     <ul>
         <li><a href="#banner">Home</a></li>
         <li><a href="#about">About</a></li>
-
-        <!-- Life in Milan with Dropdown -->
-        <li class="dropdown">
-            <a href="#life-in-milan">Life in Milan</a>
-            <ul class="dropdown-menu">
-                <li><a href="#university-networks">Uni Networks</a></li>
-            </ul>
-        </li>
-
+        <li><a href="#life-in-milan">Life in Milan</a>
+        <li><a href="#university-networks">Uni Networks</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#join-sassi">Join Us</a></li>
         <li><a href="#pricing">Support Us</a></li>
@@ -184,8 +177,8 @@
 
         <!-- Call to Action Buttons -->
         <div class="banner-buttons">
-            <a href="https://www.instagram.com/sassi.milan/" class="button">OUR INSTAGRAM!</a>
-            <a href="https://example.com/join-us" class="button join-button">JOIN US</a>
+            <a style="margin-top:0" href="https://www.instagram.com/sassi.milan/" class="button">OUR INSTAGRAM!</a>
+            <a style="margin-top:0" href="https://example.com/join-us" class="button join-button">JOIN US</a>
         </div>
         <!-- End Call to Action Buttons -->
     </div>
@@ -223,13 +216,13 @@
         <!-- Introduction Section -->
 <section id="about" class="introduction scrollto" style="background-color: #f7f7f7; padding: 60px 0;">
 
-    <div class="row clearfix" style="display: flex; justify-content: space-between; align-items: center; text-align: center; gap: 50px; width: 90%; margin: 0 auto;">
+    <div class="row clearfix two-column">
 
         <!-- Note from CGI - Milan -->
         <div class="icon-block icon-top wow fadeInUp" data-wow-delay="0.1s" style="flex: 1; min-width: 45%; padding: 30px;">
             <!-- Icon -->
             <div class="icon">
-                <i class="fa fa-university fa-3x" style="color: #fca111; margin-bottom: 15px;"></i>
+                <i class="fa fa-university fa-3x" style="color: #ffffff;"></i>
             </div>
             <!-- Icon Block Description -->
             <div class="icon-block-description">
@@ -244,7 +237,7 @@
         <div class="icon-block icon-top wow fadeInUp" data-wow-delay="0.1s" style="flex: 1; min-width: 45%; padding: 30px;">
             <!-- Icon -->
             <div class="icon">
-                <i class="fa fa-eye fa-3x" style="color: #fca111; margin-bottom: 15px;"></i>
+                <i class="fa fa-eye fa-3x" style="color: #ffffff;"></i>
             </div>
             <!-- Icon Block Description -->
             <div class="icon-block-description">
@@ -276,19 +269,19 @@
 
             <!-- Button 1: Before Arrival -->
             <div class="col-3 icon-block wow fadeInUp" data-wow-delay="0.5s">
-                <a href="https://example.com/before-arrival" target="_blank" class="button">Before Arrival</a>
+                <a href="https://example.com/before-arrival" class="button">Before Arrival</a>
                 <p class="button-description">Essential tips to prepare before you arrive in Italy.</p>
             </div>
 
             <!-- Button 2: Welcome to Italy -->
             <div class="col-3 icon-block wow fadeInUp" data-wow-delay="0.5s">
-                <a href="https://example.com/welcome-to-italy" target="_blank" class="button">Welcome to Italy</a>
+                <a href="https://example.com/welcome-to-italy" class="button">Welcome to Italy</a>
                 <p class="button-description">A guide to settling in and navigating life in Milan.</p>
             </div>
 
             <!-- Button 3: After Graduation -->
             <div class="col-3 icon-block wow fadeInUp" data-wow-delay="0.5s">
-                <a href="https://example.com/after-graduation" target="_blank" class="button">After Graduation</a>
+                <a href="https://example.com/after-graduation" class="button">After Graduation</a>
                 <p class="button-description">Resources for your next steps after completing your studies.</p>
             </div>
 
@@ -303,21 +296,35 @@
 <style>
     #life-in-milan {
         position: relative;
-        padding-bottom: 100px; /* Increased padding for larger image */
         background-color: #ffffff; /* Changed to pure white */
         overflow: hidden; /* Prevents any overflow issues */
     }
 
-    .milan-background {
-        position: relative;
-        bottom: 0;
+    #life-in-milan:before {
+        content: '';
+        display: block;
+        position: absolute;
         left: 0;
-        width: 100vw; /* Ensures it spans the entire screen width */
-        height: 350px; /* Adjust height as needed */
-        background: url("images/milan.png") no-repeat center bottom;
-        background-size: cover; /* Ensures full-width coverage */
-        opacity: 0.9;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url(images/milan.png) no-repeat center center;
+        background-size: cover;
+
     }
+
+    /* .milan-background {
+        position: absolute;
+        bottom: 0;
+        top: 9rem;
+        left: 0;
+        width: 100vw;
+        height: 400px;
+        background: url(images/milan.png) no-repeat center center;
+        background-size: cover;
+        opacity: 0.1;
+        } */
 </style>
 
 
@@ -384,38 +391,68 @@
 <!-- Events Section -->
 <section id="events" class="scrollto clearfix" style="background-color: #ffffff; padding: 60px 0;">
     <div class="row clearfix" style="display: flex; align-items: center; justify-content: space-between;">
+
         <!-- Left: Image -->
         <div class="col-2 event-image" style="flex: 1; text-align: center;">
-            <img src="images/events.png" alt="SASSI Events" onclick="show()" style="max-width: 100%; border-radius: 10px;">
+            <img id="eventsImage" src="images/events.png" alt="SASSI Events" style="max-width: 100%; border-radius: 10px; cursor: pointer;">
         </div>
 
         <!-- Right: Event Details -->
         <div class="col-2 event-details" style="flex: 1; padding: 0 40px;">
             <h2 style="font-size: 36px; font-weight: bold; margin-bottom: 10px;">OUR EVENTS</h2>
             <p style="font-size: 20px; color: #333; line-height: 1.6; text-align: justify;">
-                SASSI organizes a diverse range of events throughout the year,
-                from academic workshops and career guidance sessions to cultural celebrations
+                SASSI organizes a diverse range of events throughout the year, 
+                from academic workshops and career guidance sessions to cultural celebrations 
                 and networking meetups, ensuring a vibrant student experience in Italy.
             </p>
             <p style="font-size: 20px; color: #333; line-height: 1.6; text-align: justify;">
-                Our past events have included networking sessions with the Consulate General of India in Milan,
-                cultural festivals like Diwali and Holi, mentorship programs for new students, and collaborations
+                Our past events have included networking sessions with the Consulate General of India in Milan, 
+                cultural festivals like Diwali and Holi, mentorship programs for new students, and collaborations 
                 with university associations and industry leaders to provide valuable insights and opportunities.
             </p>
+
             <!-- Learn More Button -->
-            <a href="https://www.instagram.com/isa.polimi/" class="button" target="_blank" style="margin-top: 15px; padding: 15px 30px; font-size: 18px; background-color: #444; color: white; text-transform: uppercase; display: inline-block;">
+            <a href="#" class="button" style="margin-top: 15px; padding: 15px 30px; font-size: 18px; background-color: #444; color: white; text-transform: uppercase; display: inline-block;">
                 Learn More
             </a>
         </div>
+
     </div>
 </section>
 
 <!-- Modal -->
-<div id="myModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="img01">
+<div id="imageModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);">
+    <span class="close" style="position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+    <img class="modal-content" id="modalImage" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%; border-radius: 10px;">
 </div>
 
+<script>
+    // Get the modal
+    var modal = document.getElementById("imageModal");
+
+    // Get the image and insert it inside the modal
+    var img = document.getElementById("eventsImage");
+    var modalImg = document.getElementById("modalImage");
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+        modal.style.display = "none";
+    }
+
+    // Close the modal when clicking outside of the image
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 
 <!--Gallery-->
@@ -454,42 +491,42 @@ data-featherlight-filter="a">
         <!-- Interactive Role Cards -->
         <div class="team-roles">
             <!-- Content Creator -->
-            <a href="https://example.com/join-content" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.2s">
+            <a href="https://example.com/join-content" class="role-card wow fadeInUp" data-wow-delay="0.2s">
                 <div class="role-icon"><i class="fa fa-pencil"></i></div>
                 <h4>Content Creator</h4>
                 <p>Write engaging blogs, articles, and newsletters to keep our community informed.</p>
             </a>
 
             <!-- Social Media Designers -->
-            <a href="https://example.com/join-social" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.3s">
+            <a href="https://example.com/join-social" class="role-card wow fadeInUp" data-wow-delay="0.3s">
                 <div class="role-icon"><i class="fa fa-paint-brush"></i></div>
                 <h4>Social Media Designer</h4>
                 <p>Create eye-catching visuals for Instagram, LinkedIn, and promotional materials.</p>
             </a>
 
             <!-- Event Managers -->
-            <a href="https://example.com/join-event" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.4s">
+            <a href="https://example.com/join-event" class="role-card wow fadeInUp" data-wow-delay="0.4s">
                 <div class="role-icon"><i class="fa fa-calendar"></i></div>
                 <h4>Event Manager</h4>
                 <p>Plan and organize cultural, academic, and networking events for the community.</p>
             </a>
 
             <!-- Student Support -->
-            <a href="https://example.com/join-support" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.5s">
+            <a href="https://example.com/join-support" class="role-card wow fadeInUp" data-wow-delay="0.5s">
                 <div class="role-icon"><i class="fa fa-users"></i></div>
                 <h4>Student Support</h4>
                 <p>Help incoming and current students with guidance, housing, and university life.</p>
             </a>
 
             <!-- Tech Team -->
-            <a href="https://example.com/join-tech" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.6s">
+            <a href="https://example.com/join-tech" class="role-card wow fadeInUp" data-wow-delay="0.6s">
                 <div class="role-icon"><i class="fa fa-code"></i></div>
                 <h4>Tech Team</h4>
                 <p>Manage and develop the website, automation, and digital platforms of SASSI.</p>
             </a>
 
             <!-- Communication Team -->
-            <a href="https://example.com/join-communication" target="_blank" class="role-card wow fadeInUp" data-wow-delay="0.7s">
+            <a href="https://example.com/join-communication" class="role-card wow fadeInUp" data-wow-delay="0.7s">
                 <div class="role-icon"><i class="fa fa-comments"></i></div>
                 <h4>Communication Team</h4>
                 <p>Engage with students, partners, and stakeholders to build a strong community.</p>
@@ -509,7 +546,7 @@ data-featherlight-filter="a">
     <div class="row clearfix">
         <div class="section-heading">
             <h3>Support Us</h3>
-            <h2 class="section-title">Support the SASSI Mission</h2> 
+            <h2 class="section-title">Support the SASSI Mission</h2>
         </div>
 
         <div class="pricing-container">
@@ -559,9 +596,9 @@ data-featherlight-filter="a">
     
 <!--Contact Us Section-->
 <section id="contact" class="scrollto clearfix" style="padding: 40px 0; background-color: #f7f7f7;">
-    <div class="row clearfix" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; max-width: 1200px; margin: 0 auto;">
+    <div class="row clearfix" >
         <!-- Contact Information -->
-        <div class="col-3 contact-info" style="flex: 1; padding: 20px; background: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+        <div class="col-3 contact-info">
             <div class="section-heading" style="margin-bottom: 20px;">
                 <h3>Contact Us</h3>
                 <h2 class="section-title" style="margin-bottom: 15px;">We'd Love to Hear from You!</h2>
@@ -589,7 +626,7 @@ data-featherlight-filter="a">
         <!-- End of Contact Information -->
 
         <!-- Contact Form -->
-        <div class="col-3 contact-form" style="flex: 1; padding: 20px; background: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+        <div class="col-3 contact-form">
             <div class="section-heading" style="margin-bottom: 20px;">
                 <h3>Get in Touch</h3>
                 <h2 class="section-title" style="margin-bottom: 15px;">Send Us a Message</h2>
