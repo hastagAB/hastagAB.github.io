@@ -2768,3 +2768,17 @@ blockquote {
     }
 
  }
+
+
+ .join-button {
+    background-color: #fca113; /* Changed to golden color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.join-button:hover {
+    background-color: #000000; /* Black background on hover */
+    color: #fca113; /* Golden text on hover */
