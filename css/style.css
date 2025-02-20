@@ -1398,8 +1398,7 @@ blockquote {
 .client-overlay {
     background: rgba(0, 0, 0, 0.8);
     position: absolute;
-    top;
-    0;
+    top:0;
     right: 0;
     bottom: 0;
     left: 0;
@@ -2458,7 +2457,8 @@ blockquote {
     border-left: 5px solid #14213d; /* Red for past events */
 }
 
-#life-in-milan .button {
+#life-in-milan .button,
+.network-link.button {
     margin: 10px 0;
     padding: 12px 30px;
     font-size: 16px;
@@ -2469,8 +2469,10 @@ blockquote {
     text-decoration: none;
 }
 
-#life-in-milan .button:hover {
+#life-in-milan .button:hover ,
+.network-link.button:hover{
     background: #fca111;
+    color: white;
 }
 
 #life-in-milan .button-description {
@@ -2782,3 +2784,4 @@ blockquote {
 .join-button:hover {
     background-color: #000000; /* Black background on hover */
     color: #fca113; /* Golden text on hover */
+}
