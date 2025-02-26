@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Page Title -->
+    <title>SASSI | FAQ - Student's Association of Indians</title>
+    <!-- Meta Keywords and Description -->
+    <meta name="keywords" content="">
+    <meta name="description" content="Frequently Asked Questions for Indian students in Milan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" title="Favicon"/>
+
+    <!-- Main CSS Files (same as index for consistency) -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/namari-color.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+
+    <!-- Google Webfonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery & GSAP (for toggling FAQ answers, animations) -->
+    <script src="js/jquery.1.8.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+      /* --------------------------------------------
+         Responsive, streamlined styling for the FAQ
+         -------------------------------------------- */
+
+      /* Page Border */
+      .page-border {
+        z-index: 9999;
+      }
+
+      /* Header with fixed position, increased height for bigger logo */
+      #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        height: 80px; /* Larger nav bar for bigger logo */
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+      }
+      #header .row {
+        padding: 0 15px;
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between;
+        height: 80px;
+      }
+      #logo img {
+        max-height: 45px; /* Larger logo */
+        margin-right: 10px;
+      }
+      #logo h1 {
+        font-size: 20px;
+        margin: 0;
+        font-weight: 700;
+      }
+      #nav-main ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+      #nav-main li {
+        margin-right: 25px;
+      }
+      #nav-main a {
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #333;
+      }
+      #nav-main a:hover {
+        color: #fca111;
+      }
+
+      /* Title Section: enough padding to avoid overlap by nav bar */
+      .faq-title-section {
+        background-color: #f7f7f7;
+        text-align: center;
+        padding: 130px 20px 40px;
+      }
+      .faq-title-section h2 {
+        font-size: 28px; 
+        font-weight: 700;
+        margin: 0;
+      }
+      .faq-title-section p {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      /* FAQ Container */
+      .faq-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        text-align: left;
+      }
+
+      /* FAQ items */
+      .faq-item {
+        margin-bottom: 30px;
+      }
+      .faq-question {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: background-color 0.3s;
+      }
+      .faq-question:hover {
+        background-color: #fcf3e9;
+      }
+      .faq-icon {
+        margin-right: 10px;
+        color: #fca111;
+        font-size: 18px;
+      }
+      .faq-answer {
+        display: none;
+        padding: 15px;
+        background: #fff;
+        border-radius: 5px;
+        margin-top: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        font-size: 14px; /* Slightly smaller than question text */
+        line-height: 1.6;
+      }
+      .faq-answer ul {
+        list-style: disc;
+        margin-left: 1.5em;
+        margin-bottom: 10px;
+      }
+      .faq-answer ol {
+        list-style: decimal;
+        margin-left: 1.5em;
+        margin-bottom: 10px;
+      }
+      .faq-answer li {
+        margin-bottom: 5px;
+      }
+      .faq-answer a {
+        color: #fca111;
+        text-decoration: underline;
+      }
+
+      /* Footer */
+      #landing-footer {
+        padding: 20px 15px;
+        background: #f7f7f7;
+        margin-top: 40px;
+      }
+      #landing-footer p, #landing-footer a {
+        font-size: 13px;
+        color: #333;
+      }
+      .social-icons {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+      .social-icons li {
+        margin-right: 10px;
+      }
+
+      /* Travel & Day Trips Section */
+      .travel-section {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        text-align: left;
+        background-color: #f7f7f7;
+      }
+      .travel-section h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .travel-section h3 {
+        font-size: 20px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      .travel-section h4 {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+      .travel-section p {
+        margin-bottom: 10px;
+        line-height: 1.6;
+      }
+      .travel-section ul {
+        list-style: disc;
+        margin-left: 1.5em;
+        margin-bottom: 15px;
+      }
+      .travel-section li {
+        margin-bottom: 5px;
+      }
+      .travel-section a {
+        color: #fca111;
+        text-decoration: underline;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        #logo h1 {
+          font-size: 18px;
+        }
+        .faq-title-section h2 {
+          font-size: 24px;
+        }
+        .faq-title-section p {
+          font-size: 15px;
+        }
+        .faq-question {
+          font-size: 15px;
+        }
+        .faq-answer {
+          font-size: 14px;
+        }
+        .travel-section h2 {
+          font-size: 22px;
+        }
+        .travel-section h3 {
+          font-size: 18px;
+        }
+        .travel-section h4 {
+          font-size: 16px;
+        }
+      }
+      @media (max-width: 480px) {
+        .faq-title-section h2 {
+          font-size: 22px;
+        }
+        .faq-question {
+          font-size: 14px;
+        }
+        .faq-answer {
+          font-size: 13px;
+        }
+        .travel-section h2 {
+          font-size: 20px;
+        }
+        .travel-section h3 {
+          font-size: 16px;
+        }
+        .travel-section h4 {
+          font-size: 14px;
+        }
+      }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status" class="la-ball-triangle-path">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- End of Preloader -->
+
+    <!-- Page Border -->
+    <div class="page-border">
+        <div class="top-border wow fadeInDown animated"></div>
+        <div class="right-border wow fadeInRight animated"></div>
+        <div class="bottom-border wow fadeInUp animated"></div>
+        <div class="left-border wow fadeInLeft animated"></div>
+    </div>
+    <!-- End Page Border -->
+
+    <div id="wrapper">
+
+        <!-- Header (Navigation Bar) -->
+        <header id="header" class="nav-collapse">
+            <div class="row clearfix">
+                <!-- Logo -->
+                <div id="logo" style="display: flex; align-items: center;">
+                    <img src="images/SASSI.png" alt="SASSI Logo">
+                    <h1>SASSI</h1>
+                </div>
+                <!-- Main Navigation -->
+                <nav id="nav-main">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#" class="active">FAQ</a></li>
+                    </ul>
+                </nav>
+                <!-- End Main Navigation -->
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- FAQ Title Section -->
+        <section class="faq-title-section">
+            <h2>Frequently Asked Questions</h2>
+            <p>Click on a question to reveal the answer</p>
+        </section>
+
+        <!-- FAQ Section -->
+        <main id="content" class="faq-container">
+            
+            <!-- FAQ 1: Tessera Sanitaria -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fa fa-question-circle faq-icon"></i>
+                    How do I obtain a Tessera Sanitaria?
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Tessera Sanitaria</strong><br>
+                    A step-by-step guide to obtaining a Tessera Sanitaria<br><br>
+                    <strong>Pay the Annual Fee:</strong> Head to a Post Office and pay the annual fee using a postal order (Bollettino Postale) for SSN. Keep the receipt.</p>
+
+                    <p>If you are staying for study purposes you are entitled to two major benefits. You can:
+                    <ul>
+                        <li>1. Apply for registration to the Italian National Health Service (SSN – Servizio Sanitario Nazionale) even if staying for less than 3 months</li>
+                        <li>2. Pay a fixed yearly lump sum: €149.77 for students</li>
+                    </ul>
+                    <em>Note:</em> The paid health care is an annual registration (January–December) and expires on December 31st of each year. It does not get prorated – meaning if you arrive in Italy in October and register with payment, you still pay the full year amount.</p>
+
+                    <p><strong>Gather the Required Documents:</strong></p>
+                    <ul>
+                        <li>Passport</li>
+                        <li>Permit to Stay or Receipt</li>
+                        <li>Codice Fiscale</li>
+                        <li>Self-declaration of Residency (Residence certificate [Residenza]) – must match the address on your permit. A Rental Contract registered with Agenzia delle Entrate is necessary.</li>
+                        <li>Receipt of Payment (annual fee at the Post Office)</li>
+                        <li>Passport-size photos</li>
+                        <li>Additional Documents (depending on your status, e.g., student, relative, au pair, etc.)</li>
+                    </ul>
+
+                    <p><strong>Complete Registration:</strong> Submit the required documents to your ASL office and complete the registration. You will receive a receipt as proof until your Tessera Sanitaria arrives by mail.</p>
+                    <ul>
+                        <li>An appointment must be booked at the nearby ASL office to complete registration:
+                            <ul>
+                                <li>Use: <a href="https://prenota.zerocoda.it/" target="_blank">prenota.zerocoda.it</a></li>
+                                <li>In <em>Cosa vuoi prenotare?</em> select “Scelta / Revoca / Cambio del medico (Choice / Revocation / Change of doctor)”</li>
+                                <li>In <em>Dove?</em>, provide the name of your city</li>
+                                <li>Select the nearby ASL and book an appointment</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>Source of Information:</strong><br>
+                    Information last updated on: 20 December 2023</p>
+                </div>
+            </div>
+
+            <!-- FAQ 2: ATM Travel Card -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fa fa-question-circle faq-icon"></i>
+                    What is the ATM Travel Card and how do I use it?
+                </div>
+                <div class="faq-answer">
+                    <p><strong>ATM Travel Card</strong></p>
+                    <p><em>Ticket types for Mi1–Mi3 zone (Refer map):</em><br>
+                    <a href="https://nuovosistematariffario.atm.it/static/tariffe/stibm/zoom.png" target="_blank">https://nuovosistematariffario.atm.it/static/tariffe/stibm/zoom.png</a><br>
+                    These day tickets let you travel throughout the City of Milan and up to 21 municipalities within the Mi3 zone. Unlimited journeys allowed within the validity period on road services managed by ATM and Trenord only.</p>
+
+                    <ul>
+                        <li><strong>Ordinary ticket:</strong> €2.20<br>Validity: 90 minutes from the first validation</li>
+                        <li><strong>Daily ticket:</strong> €7.60<br>Validity: 24 hours from the first validation</li>
+                        <li><strong>3-day ticket:</strong> €13<br>Validity: 3 consecutive days from first validation until end of service on the third day</li>
+                        <li><strong>10 trip tickets:</strong> €19.50<br>Blocks of 10 tickets valid for 90 mins each. More than one person cannot use it simultaneously.</li>
+                    </ul>
+
+                    <p>Further information: <a href="https://www.atm.it/IT/VIAGGIACONNOI/BIGLIETTI/Pagine/Tipologie.aspx" target="_blank">ATM Info</a><br>
+                    The fare increases as the zone widens; basic 3-zone is €2.20, 4-zone is €2.60, etc.</p>
+
+                    <p><strong>ATM Travel card:</strong><br>
+                    You may also get travel cards with monthly/annual subscriptions. The card itself costs €10 and is valid for 4 years.<br><br>
+                    <ul>
+                        <li>Monthly subscription: €39 (€22 for under 27)</li>
+                        <li>Annual subscription: €330 (€200 for under 27)</li>
+                    </ul>
+                    ATM cards can be purchased from any ATM point in Milan: <a href="https://www.atm.it/en/AtmRisponde/INostriContatti/Pages/ATMPoint.aspx" target="_blank">ATM Points</a></p>
+
+                    <p><strong>Documents required:</strong>
+                    <ul>
+                        <li>Passport</li>
+                        <li>Permesso / Receipt</li>
+                        <li>Tax code</li>
+                        <li>Photo</li>
+                    </ul>
+                    <p><strong>Links to be added to the post caption:</strong>
+                    <ul>
+                        <li>Source: <a href="https://www.atm.it/it/Pagine/default.aspx" target="_blank">ATM Official Site</a></li>
+                        <li>Milan zones: <a href="https://nuovosistematariffario.atm.it/static/tariffe/stibm/zoom.png" target="_blank">Zone Map</a></li>
+                        <li>Ticket information: <a href="https://www.atm.it/IT/VIAGGIACONNOI/BIGLIETTI/Pagine/Tipologie.aspx" target="_blank">ATM Tickets</a></li>
+                        <li>ATM points Milan: <a href="https://www.atm.it/en/AtmRisponde/INostriContatti/Pages/ATMPoint.aspx" target="_blank">ATM Points</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ 3: Tax Code -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fa fa-question-circle faq-icon"></i>
+                    How do I obtain a Tax Code (Codice Fiscale)?
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Tax Code</strong><br>
+                    <em>Steps to fill the form</em>
+                    <ol>
+                        <li>Download the pdf form AA4/8 from the Agenzia delle Entrate website and print it, or open it with an app that allows you to fill it in</li>
+                        <li>Tick “Allocation of a tax code”</li>
+                        <li>You have to fill in part B (personal data – exactly as in your ID) and part D (your current address)</li>
+                        <li>In part C, you can list your address in Milano (if known) as a domicile for fiscal communications. If not, leave it blank</li>
+                        <li>Under “signatures”, date and place your signature in pen</li>
+                    </ol>
+
+                    <p><strong>Receive in-person:</strong>
+                    <ol>
+                        <li>Make a copy of your ID document (passport or an ID card issued by your municipality)</li>
+                        <li>Bring everything to the closest Agenzia delle Entrate (Italian Revenue Agency). Find the closest office on their website.</li>
+                        <li>Take a number, wait your turn, and they will type in your data and give you an official paper version of your unique Codice Fiscale immediately.</li>
+                    </ol>
+
+                    <p><strong>Receive online:</strong>
+                    <ol>
+                        <li>Send an e-mail to the proper Consulate address with the signed/scanned form plus a copy of your ID/Passport</li>
+                        <li>The Consulate will reply with a .pdf tax code certificate you can use as needed</li>
+                    </ol>
+
+                    <p><strong>Source:</strong>
+                    <ul>
+                        <li><a href="https://www.yesmilano.it/node/4025#:~:text=You%20need%20to%20write%20to,the%20Tax%20Code%20request%20form." target="_blank">YesMilano</a></li>
+                        <li><a href="https://www.doctorsinitaly.com/b/get-codice-fiscale/" target="_blank">DoctorsInItaly</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ 4: Residence Permit -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fa fa-question-circle faq-icon"></i>
+                    How do I obtain or renew my Residence Permit (Permesso di Soggiorno)?
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Residence Permit</strong></p>
+
+                    <p><em>Permesso di Soggiorno kit:</em><br>
+                    Link to the list of Poste Italiane with Sportello Amico: <a href="https://maps.app.goo.gl/U6jDR8HtyMQYZxYY9" target="_blank">Google Maps</a></p>
+
+                    <p><strong>Permesso di Soggiorno student new:</strong><br>
+                    Sample to fill the kit: <a href="https://www.polimi.it/fileadmin/user_upload/International_prospective_students/Life/Permesso_di_soggiorno_sample.pdf" target="_blank">Polimi Example</a><br>
+                    <em>Note:</em> Remember to take the original documents for verification.<br>
+                    <strong>Documents to be submitted in Poste Italiane:</strong>
+                    <ul>
+                        <li>Copy of Passport</li>
+                        <li>Copy of Visa</li>
+                        <li>Copy of Codice Fiscale (Tax code)</li>
+                    </ul>
+                    <strong>Document to be submitted in Questura:</strong>
+                    <ul>
+                        <li>Copy of Medical Insurance</li>
+                        <li>Copy of Passport</li>
+                        <li>Copy of Tax code</li>
+                        <li>Copy of Admission letter from the university</li>
+                        <li>Passport size photos</li>
+                    </ul>
+
+                    <p><strong>Permesso di Soggiorno student renewal:</strong><br>
+                    Sample to fill the kit: <a href="https://international.unicatt.it/ucscinternational-Rinnovo%20Permesso_di_soggiorno2020_21.pdf" target="_blank">Unicatt Example</a><br>
+                    <em>Note:</em> Remember to take the original documents for verification.<br>
+                    <strong>Documents to be submitted in Poste Italiane:</strong>
+                    <ul>
+                        <li>Copy of Passport</li>
+                        <li>Copy of old Permesso di Soggiorno</li>
+                        <li>Copy of Codice Fiscale (Tax code)</li>
+                    </ul>
+                    <strong>Document to be submitted in Questura:</strong>
+                    <ul>
+                        <li>Copy of Medical Insurance</li>
+                        <li>Copy of old Permesso di Soggiorno</li>
+                        <li>Copy of Bank balance (Not less than 6000 euro)/scholarship certificate</li>
+                        <li>Copy of Passport</li>
+                        <li>Copy of Tax code</li>
+                        <li>Enrollment certificate received from the university</li>
+                        <li>Passport size photos</li>
+                        <li>Copy of Carta d'identità (some Questura ask this)</li>
+                    </ul>
+
+                    <p><strong>Permesso di Soggiorno for work search:</strong><br>
+                    Sample to fill the kit: <a href="https://drive.google.com/file/d/1SIGG2AXGQ6-m-cYVLTnhFw2i2o7X_zCv/view?usp=share_link" target="_blank">Sample kit</a><br>
+                    <em>Note:</em> Remember to take the original documents for verification.<br>
+                    <strong>Documents to be submitted in Poste Italiane:</strong>
+                    <ul>
+                        <li>Copy of Passport</li>
+                        <li>Copy of old Permesso di Soggiorno</li>
+                        <li>Copy of Codice Fiscale (Tax code)</li>
+                    </ul>
+                    <strong>Document to be submitted in Questura:</strong>
+                    <ul>
+                        <li>Copy of DID online</li>
+                        <li>Copy of Medical Insurance</li>
+                        <li>Copy of old Permesso di Soggiorno</li>
+                        <li>Copy of Bank balance (Not less than 6000 euro)</li>
+                        <li>Copy of Passport</li>
+                        <li>Copy of Tax code</li>
+                        <li>Copy of Degree Certificate</li>
+                        <li>Passport size photos</li>
+                        <li>Copy of Carta d'identità (some Questura ask this)</li>
+                    </ul>
+
+                    <p><strong>Permesso di Soggiorno for work (with work contract):</strong><br>
+                    Sample to fill the kit: <a href="https://www.yesmilano.it/system/files/articolo/allegati/3429/9684/Guide%20to%20Completing%20the%20Permesso%20di%20Soggiorno%20Application%20Kit%20-%20Moduli%201%20and%202.pdf" target="_blank">YesMilano Guide</a><br>
+                    <em>Note:</em> Remember to take the original documents for verification.<br>
+                    <strong>Documents to be submitted in Poste Italiane:</strong>
+                    <ul>
+                        <li>Copy of Passport</li>
+                        <li>Copy of old Permesso di Soggiorno</li>
+                        <li>Copy of Codice Fiscale (Tax code)</li>
+                    </ul>
+                    <strong>Document to be submitted in Questura:</strong>
+                    <ul>
+                        <li>Copy of Work Contract</li>
+                        <li>Copy of old Permesso di Soggiorno</li>
+                        <li>Copy of Passport</li>
+                        <li>Copy of Tax code</li>
+                        <li>Passport size photos</li>
+                        <li>Copy of last three months' pay slip (some Questura ask)</li>
+                        <li>Copy of Medical Insurance (some Questura ask)</li>
+                        <li>Copy of Carta d'identità (some Questura ask)</li>
+                    </ul>
+
+                    <p><strong>Returning from India with Residence permit slip:</strong><br>
+                    Foreigners awaiting renewal of their residence permits can leave and re-enter Italy if they hold:
+                    <ul>
+                        <li>the receipt issued by Italian Post offices (Poste Italiane S.p.A) certifying the submission of the application</li>
+                        <li>the expired residence permit</li>
+                        <li>their passport or other equivalent travel document</li>
+                    </ul>
+                    The same facilitated procedure is granted to foreigners who have submitted their application for their first residence permits (employment, self-employment, or family reunification), provided that:
+                    <ul>
+                        <li>they leave and re-enter Italy through any Italian external border crossing point (circular letter 11th March 2009);</li>
+                        <li>they show their passport or other equivalent travel document, along with the entry visa specifying the reasons for their stay and the receipt issued by Poste Italiane;</li>
+                        <li>they do not transit through other Schengen countries, as this is not allowed.</li>
+                    </ul>
+                    <p>The circular letter (pdf 35 Kb) of 27 June 2007 states that foreigners who have children under 14 may request Questura to issue a temporary residence permit with limited validity, containing the children's personal details, allowing them to leave Italy temporarily.</p>
+                    <p><em>Note:</em> The only catch is not to transit or travel through/from any Schengen countries other than Italy.</p>
+                    <p><strong>Source:</strong> <a href="https://www.poliziadistato.it/articolo/requirements-for-immigrants-leaving-italy-temporarily" target="_blank">Polizia di Stato</a></p>
+                </div>
+            </div>
+
+            <!-- FAQ 5: Get a SIM Card -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fa fa-question-circle faq-icon"></i>
+                    How do I get an Italian SIM Card or port my existing SIM?
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Get a SIM Card</strong><br>
+                    <em>Documents required to buy your 1st SIM card:</em>
+                    <ul>
+                        <li>Passport (original and copy)</li>
+                        <li>Tax code (optional; recommended)</li>
+                    </ul>
+                    <p><strong>Steps to acquire it:</strong>
+                    <ol>
+                        <li>Go to the nearest official store of TIM, Vodafone, Iliad, Ho, or Wind3 (windtre)</li>
+                        <li>Tell them you need to buy a new SIM card</li>
+                        <li>Select from the plans they offer (some allow free international calling)</li>
+                        <li>Tell them you do not need any add-ons (especially at Vodafone store)</li>
+                        <li>Get your SIM, pay for the 1st-month plan + SIM card</li>
+                    </ol>
+                    Et voilà, you have your brand new Italian SIM.<br><br>
+                    <strong>If you want to port your SIM:</strong><br>
+                    Check which carrier gives the better offer.<br><br>
+                    <strong>Documents required to port your SIM card:</strong>
+                    <ul>
+                        <li>Passport (original and copy)</li>
+                        <li>Permesso (original and copy)</li>
+                        <li>Tax code (copy)</li>
+                    </ul>
+                    <em>(Note: some carriers require Permesso, some carriers don’t.)</em>
+                </div>
+            </div>
+
+            <!-- FAQ 6: DSU -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fa fa-question-circle faq-icon"></i>
+                    What is DSU (Diritto allo Studio Universitario) and how do I apply?
+                </div>
+                <div class="faq-answer">
+                    <p><strong>DIRITTO ALLO STUDIO UNIVERSITARIO (DSU)</strong><br>
+                    (Please download the document from the provided links and upload it to the ISA Polimi Google Drive)</p>
+
+                    <p><strong>General info:</strong><br>
+                    As you probably know, studying at the University can be very expensive. For this reason, particularly deserving students who are in a difficult economic situation can count on Financial Aid Benefits…the Italian magic word is DSU!<br>
+                    Every year, in June, PoliMi publishes a special Call for the “DSU” Benefits assignment.<br>
+                    Further information: <a href="https://www.polimi.it/en/current-students/tuition-fees-scholarships-and-financial-aid/university-financial-aid-diritto-allo-studio-universitario-dsu" target="_blank">Polimi DSU</a></p>
+
+                    <p><strong>Filling DSU application:</strong><br>
+                    <a href="https://drive.google.com/drive/folders/1dT4guaub0ldygTDGb9TYO6HSts7qOP8y?usp=share_link" target="_blank">DSU Application Link</a></p>
+
+                    <p><strong>Generating ISEEU value for DSU:</strong><br>
+                    <em>Documents required</em>
+                    <ul>
+                        <li>Document generated once the DSU application is submitted</li>
+                        <li>Admission letter</li>
+                        <li>Passport</li>
+                        <li>Tax code</li>
+                        <li>Residence permit (or receipt if permit expired)</li>
+                        <li>The bank statement containing the account balance of 31/12/&lt;previous_year&gt;</li>
+                        <li>Affidavit document (with Italian translation as a single document)
+                            <ul>
+                                <li>Affidavit sample: <a href="https://docs.google.com/document/d/1VcC4imqfip_cGKCVbVr7lyZqudHWqxxY/edit?usp=sharing&ouid=106974399123955504010&rtpof=true&sd=true" target="_blank">Affidavit Document</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>Steps to be followed: The step-by-step process to generate ISEEU for DSU with help from Tax Assistance Centres (CAF) is here:<br>
+                    <a href="https://www.polimi.it/en/current-students/tuition-fees-scholarships-and-financial-aid/student-contribution/students-with-income-and-assets-movable-and-immovable-declared-and-or-owned-abroad-or-in-italy-and-abroad" target="_blank">Polimi DSU ISEEU Info</a></p>
+                </div>
+            </div>
+
+            <!-- FAQ 7: CAAF Services -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fa fa-question-circle faq-icon"></i>
+                    What are CAAF/CAF services?
+                </div>
+                <div class="faq-answer">
+                    <p><strong>CAAF Services</strong><br>
+                    The CAAF or CAF (<em>Centro Assistenza Fiscale</em>) are offices where you can ask for help with tax issues. The CAF is responsible for the tax protection of taxpayers, offering some free or state-subsidized services, and some paid. Being highly controlled and regulated, citizens can rely on their services for assistance with tax benefits and obligations.</p>
+
+                    <p>This service assists in the following fiscal paperwork:
+                    <ul>
+                        <li>730 REDDITI (EX UNICO) Tax return</li>
+                        <li>ISEE the economic status index (Note: ISEE Parificato for international students not resident in Italy can only be requested if your University has a specific agreement with CGIL CAAF)</li>
+                        <li>PARTITE IVA (VAT holder's) fiscal paperwork</li>
+                        <li>SUCCESSION</li>
+                        <li>COLF & BADANTI (House worker's) fiscal paperwork</li>
+                        <li>IMU (Taxation on buildings)</li>
+                        <li>ASSEGNO UNICO (Social security)</li>
+                    </ul>
+                    Contact CAAF via e-mail at <a href="mailto:csfmilano@cgil.lombardia.it">csfmilano@cgil.lombardia.it</a> or book an appointment online.<br>
+                    CGIL CAAF sent us a list of services and prices attached to this paragraph. CGIL union members may be entitled to a discount.<br>
+                    Official site: <a href="https://www.assistenzafiscale.info/" target="_blank">https://www.assistenzafiscale.info/</a></p>
+
+                    <p><strong>Additional helps:</strong><br>
+                    <ul>
+                        <li>Residence permit renewal and update</li>
+                        <li>Residence permit for long-term</li>
+                        <li>Residence issue and update</li>
+                        <li>Family Reunification for Non-EU-Citizens</li>
+                        <li>Family Reunification for EU-Citizens</li>
+                        <li>Italian language test enrolment</li>
+                        <li>Counseling on the application for Italian Citizenship</li>
+                        <li>Immigration-related form</li>
+                    </ul>
+                    Send an e-mail inquiry for an appointment at <a href="mailto:migranti.mi@cgil.lombardia.it">migranti.mi@cgil.lombardia.it</a> – provide details about your situation + name, surname, tax code, and home address.</p>
+
+                    <p><strong>Source:</strong> 
+                    <a href="https://www.yesmilano.it/en/study/how-to/patronato#:~:text=The%20caf%20is%20responsible%20for,tax%20benefits%20and%20tax%20obligations" target="_blank">YesMilano Patronato</a></p>
+                </div>
+            </div>
+
+            <!-- FAQ 8: Residenza & Carta Identita -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fa fa-question-circle faq-icon"></i>
+                    How do I register for Residenza and obtain my Italian ID Card (Carta d’Identità)?
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Residenza & Carta Identita</strong><br>
+                    The Italian National ID Card/Carta d'Identità can be obtained from the City of Milano’s Registry Office/Anagrafe. To get the ID Card you must have registered for residence. <em>Iscrizione anagrafica</em> is the administrative procedure to choose a place as your residenza, and is a right for all foreign citizens regularly staying in Italy (including asylum-seekers). Iscrizione anagrafica is necessary to issue <em>certificato di residenza</em> (residence certificate in English) and <em>carta d’identità</em>.<br>
+                    Source : <a href="https://italy.refugee.info/en-us/articles/5388955941655" target="_blank">italy.refugee.info</a></p>
+
+                    <p><strong>Documents required for the process of Residenza:</strong></p>
+                    <ul>
+                        <li>Rental Contract registered with Agenzia delle entrate (or your housing agency)</li>
+                        <li>Passport</li>
+                        <li>Codice Fiscale (Tax Code)</li>
+                        <li>Passport Photo</li>
+                        <li>Residence permit / Residence permit receipt if the permit has expired</li>
+                    </ul>
+
+                    <p><strong>Steps to apply for Residenza:</strong></p>
+                    <ul>
+                        <li>Register on your local commune website. In the search section, look for <em>RESIDENZA</em> (not <em>richiesta di residenza</em>)</li>
+                        <li>Navigate to the “Request for residency for foreign people coming from abroad”</li>
+                        <li>Select it and start a new request</li>
+                        <li>Fill out the entire form; you need scanned copies of all required documents</li>
+                        <li>Your contract has 3 main details you must fill: Foglio, Particella, Subalterno</li>
+                        <li>After submitting, you will receive an email that the application is registered and being processed</li>
+                        <li>Wait up to 45 days for police inspection</li>
+                        <li>Once done, you will be registered and can check your residenza status online</li>
+                    </ul>
+
+                    <p><strong>Documents required for Carta di Identita:</strong></p>
+                    <ul>
+                        <li>Residenza certificate</li>
+                        <li>Passport</li>
+                        <li>Codice Fiscale (Tax Code)</li>
+                        <li>Passport Photo</li>
+                        <li>Residence permit / receipt if expired</li>
+                    </ul>
+
+                    <p><strong>Steps to apply for Carta di Identita:</strong></p>
+                    <ul>
+                        <li>Go to the same commune website, find the <em>Carta di identita</em> section, and book your appointment</li>
+                        <li>Take all your documents (original + copy) on appointment day</li>
+                        <li>Pay the card fees (varies by comune)</li>
+                    </ul>
+                    Et voila, you have your brand new Italian ID card.<br><br>
+
+                    <p><strong>Source for Milano:</strong></p>
+                    <ul>
+                        <li><a href="https://formshd2.comune.milano.it/rwe2/module_preview.jsp?MODULE_TAG=MOD_DDR_ESTERO" target="_blank">Comune Milano Form</a></li>
+                        <li><a href="https://www.comune.milano.it/servizi/fare-la-carta-di-identita" target="_blank">Comune Milano - ID Card</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <!-- End FAQ Section -->
+
+        <!-- Travel & Day Trips Section -->
+        <section class="travel-section">
+            <h2>Travel &amp; Day Trips from Milan</h2>
+            <p>Looking to explore beyond campus life? Below is a curated guide to Lombardian cities, scenic lakes, other provincial gems, and even Swiss adventures. Discover the most visited Italian provinces, underrated treasures, and in-depth itineraries for Bergamo and Brescia.</p>
+
+            <!-- High-Level Overviews (A-D, Most Visited, Underrated Gems) -->
+            <h3>A. Day Trip to Lombardian Cities</h3>
+            <ul>
+              <li><strong>1. Bergamo</strong> — Citta Alta old city</li>
+              <li><strong>2. Brescia</strong> — old city, churches, and ruins</li>
+              <li><strong>3. Cremona / Mantua</strong> — old city, churches</li>
+            </ul>
+
+            <h3>B. Lakes Around Milan</h3>
+            <ul>
+              <li><strong>1. Lago Como / Lecco (North)</strong><br>
+                - Lecco (lake and old city), Varenna (villas, beaches), Bellano (Orido), Bellagio (trekking), ferry to Como
+              </li>
+              <li><strong>2. Lago Maggiore / Varese (West)</strong><br>
+                - Arona, Stressa
+              </li>
+              <li><strong>3. Lago Iseo / Garda (East)</strong><br>
+                - Iseo city/lake walk, ferry ride, Sirmione (from Desenzano del Garda station)
+              </li>
+            </ul>
+
+            <h3>C. Day Trips to Cities in Other Provinces</h3>
+            <ul>
+              <li>1. Turin</li>
+              <li>2. Genoa</li>
+              <li>3. Verona</li>
+            </ul>
+
+            <h3>D. Switzerland Day Trips</h3>
+            <ul>
+              <li>1. Lugano</li>
+              <li>2. Bernina express (Tirano to St. Moritz)</li>
+              <li>3. Zermatt/Grindelwald (from Domodossola)</li>
+            </ul>
+
+            <h3>Most Visited Italian Provinces</h3>
+            <ul>
+              <li><strong>1. Tuscany</strong><br>
+                - Florence, Pisa, beautiful countryside
+              </li>
+              <li><strong>2. Veneto</strong><br>
+                - Venezia, music/film festival, Verona
+              </li>
+              <li><strong>3. Campania</strong><br>
+                - Napoli (pizzaaaa 🍕), Amalfi Coast, Capri
+              </li>
+            </ul>
+
+            <h3>Underrated Gems</h3>
+            <ul>
+              <li><strong>4. Liguria</strong><br>
+                - Genoa, Cinque Terre rocky beaches, seafood
+              </li>
+              <li><strong>5. Emilia Romagna</strong><br>
+                - Fooood!, Bologna, Parma
+              </li>
+              <li><strong>6. Puglia</strong><br>
+                - Beaches, Bari, Alberobello, Lecce
+              </li>
+            </ul>
+
+            <!-- Detailed Guides for Bergamo & Brescia -->
+            <h3>A. Day Trip to Ancient Lombardian Cities</h3>
+
+            <h4>A1. Bergamo</h4>
+            <p>
+              Bergamo is divided into two districts. The older district, Città Alta, sits on a hill encircled 
+              by Venetian walls (a UNESCO World Heritage site!), reachable by funicular from the newer district, 
+              Città Bassa. Named Italian capital of culture 2023 (with Brescia).
+            </p>
+            <p>
+              Bergamo was also named the UNESCO Creative City Of Gastronomy, famous for its regional cuisine and 
+              cheese varieties. Enjoy local stuffed pasta (casoncelli) or polentone to go, and consider touring 
+              the cheese factories.
+            </p>
+            <p><strong>ITINERARY</strong><br>
+              - Train from Milano Centrale/Lambrate to Bergamo<br>
+              - Bus 1 from Bergamo station to Citta Alta start; then funiculare or a 15-min walk up the hill 
+                (a Lombardy day pass €16.5 covers transport + funiculare).<br>
+              - Return via citta bassa, soaking in Venetian walls.<br>
+              - Stroll the old city; don’t miss:
+            </p>
+            <ul>
+              <li>Piazza Vecchia (main square)</li>
+              <li>Castello di San Vigilio (funiculare or a walk for aerial views)</li>
+              <li>Basilica di Santa Maria Maggiore &amp; Duomo di Bergamo</li>
+              <li>Campanone bell tower (€5 entry)</li>
+            </ul>
+            <p>
+              With extra time, hop a train to Lecco for an Alpine lakeside aperitivo at sunset!
+            </p>
+            <p>
+              <strong>Blog:</strong> <a href="https://thattravelista.com/bergamo-day-trip-from-milan/" target="_blank">thattravelista.com</a><br>
+              <strong>Map:</strong> <a href="https://wanderlog.com/list/geoMap/9849/bergamo-map/map" target="_blank">wanderlog.com</a>
+            </p>
+
+            <h4>A2. Brescia</h4>
+            <p>
+              Brescia is a prosperous industrial city in Lombardy, between Lake Garda, Lake Iseo, and the Valtrompia 
+              at the foothills of the Alps. It’s rich in history, flavors, and major artistic monuments. 
+              Also named Italian capital of culture 2023 (with Bergamo).
+            </p>
+            <p><strong>Must-see spots:</strong></p>
+            <ul>
+              <li>Capitolium o Tempio Capitolino (best-preserved ancient Roman temple, ~73 CE)</li>
+              <li>Piazza della Loggia</li>
+              <li>Duomo Vecchio</li>
+              <li>Castello di Brescia — a “King’s Landing” vibe with breathtaking sunset views</li>
+            </ul>
+            <p>
+              If time allows, head to the nearby lake city of Iseo en route to Milan. 
+              You can stroll the lake, take a ferry (Lombardy day pass €16.5), or even swim in summer.
+            </p>
+            <p>
+              <strong>Blog:</strong> <a href="https://crackita.com/what-to-see-in-brescia-the-perfect-itinerary-to-discover-the-lioness-of-italy-in-one-day/" target="_blank">crackita.com</a><br>
+              <strong>Map:</strong> <a href="https://wanderlog.com/list/itinerary/2880/1-day-brescia-itinerary" target="_blank">wanderlog.com</a>
+            </p>
+        </section>
+        <!-- End Travel & Day Trips Section -->
+
+        <!-- Footer -->
+        <footer id="landing-footer" class="clearfix">
+            <div class="row clearfix" style="display: flex; justify-content: space-between; align-items: center;">
+                <p class="col-2" style="margin: 0;">
+                    Made with love by <a href="https://github.com/hastagAB" target="_blank">HastagAB</a>
+                </p>
+                <!-- Social Icons in Footer -->
+                <ul class="col-2 social-icons">
+                    <li>
+                        <a target="_blank" title="Instagram" href="http://www.instagram.com/sassi.milan">
+                            <i class="fa fa-instagram fa-1x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" title="Twitter" href="http://www.twitter.com/username">
+                            <i class="fa fa-twitter fa-1x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" title="Email" href="mailto:your-email@gmail.com">
+                            <i class="fa fa-envelope fa-1x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    </div>
+    <!-- End Wrapper -->
+
+    <!-- Additional JS Resources -->
+    <script src="js/wow.min.js"></script>
+    <script src="js/featherlight.min.js"></script>
+    <script src="js/featherlight.gallery.min.js"></script>
+    <script src="js/jquery.enllax.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.stickyNavbar.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/images-loaded.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/site.js"></script>
+
+    <script>
+       // Toggle each FAQ answer on question click
+       $(document).ready(function(){
+           $('.faq-question').click(function(){
+               $(this).next('.faq-answer').slideToggle();
+           });
+       });
+    </script>
+</body>
+</html>
